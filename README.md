@@ -1,3 +1,3 @@
 # stakeksm
 
-Project to scrape chain data to support https://StakeKSM.io
+Project to read Kusama chain data to support https://StakeKSM.io
