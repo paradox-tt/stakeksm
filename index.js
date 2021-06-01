@@ -122,7 +122,7 @@ async function createValidatorObjects(){
         const ss = getActiveBond(validatorAddress).then((ss) => {
             val._self_stake= ss;
         }).catch((sstake)=>{
-            console.log("Error | Get active bond "+cont.toString());
+            console.log("Error | Get active bond "+sstake.toString());
             val._self_stake=0;
         });
               
