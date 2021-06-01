@@ -103,7 +103,10 @@ export class Validator{
 
     }
 
-    
+     /*
+    Function to return the sum of all nominator's bond
+    rounded to two decimal places.
+    */   
     getNominatorBond(){
         var bondTally=0;
 
@@ -116,6 +119,9 @@ export class Validator{
         return parseFloat(bondTally).toFixed(2);
     }
 
+    /*
+    Function to return the count of the nominator array
+    */
     getNominatorCount(){
         if(this._nominators!=undefined){
             return this._nominators.length;
@@ -124,6 +130,9 @@ export class Validator{
         }
     }
 
+    /*
+    Function to return the count of the active nominator array
+    */
     getActiveNominatorCount(){
         if(this._active_nominators!=undefined){
             return this._active_nominators.length;
@@ -132,6 +141,7 @@ export class Validator{
         }
     }
 
+    //Adds a dormant nominator
     addNominator(nominator){
         
         if(this._nominators==undefined){
@@ -141,25 +151,26 @@ export class Validator{
         }
     }
 
+
+    /*
+    Gets the validator name based on primary and sub names
+    If both are available then return them both with a '/' separator
+    If the sub is undefined but the primary is not then return the primary
+    finally if neither is available return the address
+    */
     getValidatorName(){
         var output;
 
        if (this._primary != undefined && this._sub != undefined) {
            output= this._primary+"/"+this._sub;
-       } else if (this._primary == undefined) {
-           output = this._sub
        } else if (this._sub == undefined) {
-           output = this._primary
+           output = this._primary;
        }else {
            output = this._address;
        }
 
-       if (output == undefined) {
-           return this._address;
-       } else {
            return output;
-       }
-   }
+    }
 
    toString(){
        return this.getValidatorName();

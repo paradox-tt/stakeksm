@@ -1,7 +1,13 @@
+//WSS or WS settings for server
 export const wss_provider='ws://104.238.205.8:9302';
 
+//Listen port of endpoint
 export const listen_port=5000;
 
+//Time to cache output in minutes
+export const cache_time=5;
+
+//Manual ordered list of validators
 export const validator_list = 
 ['GcYjMe8hksoYUB6sdWBbgWGJL22pZFg1FmDBALqbRSds2fZ',
 'H3DL157HL7DkvV2kXocanmKaGXNyQphUDVW33Fnfk8KNhsv',
