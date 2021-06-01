@@ -4,6 +4,6 @@ Install NodeJS, configure settings.js
 
 Execute by:
 
-NodeJS index.js
+./node index.js
 
 
