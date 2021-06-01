@@ -1,3 +1,9 @@
-# stakeksm
+# StakeKSM
 
-Project to read Kusama chain data to support https://StakeKSM.io
+Install NodeJS, configure settings.js
+
+Execute by:
+
+NodeJS index.js
+
+
