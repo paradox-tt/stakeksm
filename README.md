@@ -1,4 +1,4 @@
-# StakeKSM
+# StakeKSM.io
 
 Install NodeJS, configure settings.js
 
