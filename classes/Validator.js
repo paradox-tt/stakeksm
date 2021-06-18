@@ -163,7 +163,7 @@ export class Validator{
 
        if (this._primary != undefined && this._sub != undefined) {
            output= this._primary+"/"+this._sub;
-       } else if (this._sub == undefined) {
+       } else if (this._sub == undefined && this._primary!=undefined) {
            output = this._primary;
        }else {
            output = this._address;
