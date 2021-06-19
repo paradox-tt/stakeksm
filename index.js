@@ -227,29 +227,11 @@ there is a controller then lookup the ledger based on the controller.
 */
 async function getActiveBond(stashAddress){
     var output;
-    var controllerAddress;
 
-    //Determine controller address
-    await api.query.staking.bonded(stashAddress).then(controller=>{
-        controllerAddress=controller.value.toString();
+    //Determine the bonded balance
+    await api.derive.balances.all(stashAddress).then(balance=>{
+        output = balance.lockedBalance.toNumber();
     })
-    
-    //Lookup the value of the bond using the controller
-    await api.query.staking.ledger(controllerAddress).then(bond=>{
-        if(bond !=undefined && bond.value.toJSON()!=null){
-            try{
-                output=bond.value.active.toNumber();
-            }catch(err){
-                output=undefined;
-            }
-        }
-        else{
-            output=undefined;
-        }
-    }).catch(led_err=>{
-        console.log('', err);
-        output = undefined;
-    });
 
     return output;
 }
